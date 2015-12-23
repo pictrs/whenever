@@ -310,6 +310,15 @@ No. Heroku does not support cron, instead providing [Heroku Scheduler](https://d
 
 [whenever-test](https://github.com/heartbits/whenever-test) is an extension to Whenever for testing a Whenever schedule.
 
+### ExceptionNotification
+ 
+If you are using the exception_notification gem (<https://github.com/smartinez87/exception_notification>), enable it for your "runner" cronjobs with:
+
+In your "schedule.rb" file:
+`set :runner_exception_notification, true`
+
+This will catch all commands defined as "runner", handle it with ExceptionNotification (and raise the exception nevertheless).
+
 ### Credit
 
 Whenever was created for use at Inkling (<http://inklingmarkets.com>). Their take on it: <http://blog.inklingmarkets.com/2009/02/whenever-easy-way-to-do-cron-jobs-from.html>
