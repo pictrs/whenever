@@ -315,9 +315,16 @@ No. Heroku does not support cron, instead providing [Heroku Scheduler](https://d
 If you are using the exception_notification gem (<https://github.com/smartinez87/exception_notification>), enable it for your "runner" cronjobs with:
 
 In your "schedule.rb" file:
-`set :runner_exception_notification, true`
-
+```ruby
+set :runner_exception_notification, true
+```
 This will catch all commands defined as "runner", handle it with ExceptionNotification (and raise the exception nevertheless).
+
+Or as an option for the runner command:
+```ruby
+runner 'Worker.do', runner_exception_notification: true
+```
+
 
 ### Credit
 
